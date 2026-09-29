@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FashionStore — Premium Streetwear &amp; Luxury Fashion Online</title>
+    <meta
+      name="description"
+      content="Shop the FashionStore 2026 collection: premium streetwear and luxury pieces for men, women and kids — shirts, t-shirts, pants, shoes, caps and glasses. Free wishlist, secure checkout, fast delivery."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="FashionStore" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FashionStore" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta
+      property="og:title"
+      content="FashionStore — Premium Streetwear &amp; Luxury Fashion Online"
+    />
+    <meta
+      property="og:description"
+      content="Elevate your wardrobe with our exclusive streetwear and luxury pieces. Designed for those who dare to stand out."
+    />
+    <meta
+      property="og:image"
+      content="%VITE_SITE_URL%/images/hero-1600.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="FashionStore — Premium Streetwear &amp; Luxury Fashion Online"
+    />
+    <meta
+      name="twitter:description"
+      content="Elevate your wardrobe with our exclusive streetwear and luxury pieces."
+    />
+    <meta
+      name="twitter:image"
+      content="%VITE_SITE_URL%/images/hero-1600.webp"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      fetchpriority="high"
+      imagesrcset="
+        /images/hero-640.avif   640w,
+        /images/hero-768.avif   768w,
+        /images/hero-1080.avif 1080w,
+        /images/hero-1600.avif 1600w"
+      imagesizes="100vw"
+    />
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      :root {
+        font: 18px/145% system-ui, "Segoe UI", Roboto, sans-serif;
+        letter-spacing: 0.18px;
+        color-scheme: dark;
+        background: #0a0a0a;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      @media (max-width: 1024px) {
+        :root { font-size: 16px; }
+      }
+      html, body, #root {
+        width: 100%;
+        min-height: 100vh;
+        background-color: #0a0a0a;
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+      .hero-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        height: 100svh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+      }
+      .hero-container picture { display: contents; }
+      .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 30, 15, 0.7) 50%,
+          rgba(0, 0, 0, 0.95) 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        color: #fff;
+        padding: 0 20px;
+        margin-top: 60px;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #00ff88;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+      }
+      .hero-title {
+        font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+        font-size: 5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -1.68px;
+        margin: 32px 0 25px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      @media (max-width: 1024px) {
+        .hero-title { margin-top: 20px; }
+      }
+      .hero-title span {
+        color: transparent;
+        -webkit-text-stroke: 2px #00ff88;
+        text-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+      }
+      .hero-text {
+        font-size: 1.1rem;
+        color: #ccc;
+        max-width: 600px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+      button {
+        font: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+      }
+      .btn-primary,
+      .btn-secondary {
+        padding: 15px 35px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .btn-primary {
+        background: #00ff88;
+        color: #000;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+      .light-beam {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.4;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 255, 136, 0.2),
+          transparent
+        );
+      }
+      .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: #888;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      }
+      .mouse {
+        width: 25px;
+        height: 40px;
+        border: 2px solid #888;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        padding-top: 6px;
+      }
+      .wheel {
+        width: 4px;
+        height: 8px;
+        background: #00ff88;
+        border-radius: 2px;
+        box-shadow: 0 0 10px #00ff88;
+      }
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 3rem;
+        }
+        .hero-text {
+          font-size: 1rem;
+        }
+        .hero-buttons {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "OnlineStore",
+        "name": "FashionStore",
+        "url": "%VITE_SITE_URL%/",
+        "description": "Premium streetwear and luxury fashion for men, women and kids.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "%VITE_SITE_URL%/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div>
+        <main>
+          <div class="hero-container">
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  /images/hero-640.avif   640w,
+                  /images/hero-768.avif   768w,
+                  /images/hero-1080.avif 1080w,
+                  /images/hero-1600.avif 1600w"
+                sizes="100vw"
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  /images/hero-640.webp   640w,
+                  /images/hero-768.webp   768w,
+                  /images/hero-1080.webp 1080w,
+                  /images/hero-1600.webp 1600w"
+                sizes="100vw"
+              />
+              <img
+                class="background-image"
+                src="/images/hero-1600.webp"
+                width="1600"
+                height="1067"
+                alt="Model wearing pieces from the FashionStore premium streetwear collection"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+            <div class="overlay"></div>
+            <div class="light-beam" aria-hidden="true"></div>
+
+            <div class="hero-content">
+              <p class="hero-subtitle">Premium Fashion Collection 2026</p>
+
+              <h1 class="hero-title">Discover Your <span>Style</span></h1>
+
+              <p class="hero-text">
+                Elevate your wardrobe with our exclusive streetwear and luxury
+                pieces. <br />
+                Designed for those who dare to stand out.
+              </p>
+
+              <div class="hero-buttons">
+                <button type="button" class="btn-primary">Shop Now</button>
+                <button type="button" class="btn-secondary">
+                  Explore Our Fashion
+                </button>
+              </div>
+            </div>
+
+            <div class="scroll-indicator" aria-hidden="true">
+              <div class="mouse"><div class="wheel"></div></div>
+              <span>Scroll</span>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <noscript>
+      FashionStore needs JavaScript to run. Please enable it in your browser to
+      browse the men, women and kids collections.
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+.star-rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.star-rating-container.star-size-small {
+  gap: 4px;
+}
+
+.star-rating-container.star-size-large {
+  gap: 12px;
+}
+
+.star-rating-wrapper {
+  display: flex;
+  gap: 6px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.star-rating-wrapper:not(.mobile):hover {
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.star-rating-wrapper.mobile {
+  gap: 4px;
+  padding: 6px;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  touch-action: manipulation;
+}
+
+.star-size-small .star-btn {
+  font-size: 14px;
+  padding: 2px;
+}
+
+.star-size-large .star-btn {
+  font-size: 28px;
+  padding: 6px;
+}
+
+.star-btn.filled {
+  color: #ffc107;
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.6);
+  filter: drop-shadow(0 0 4px rgba(255, 193, 7, 0.4));
+}
+
+.star-btn:hover:not(:disabled) {
+  color: #ffed4e;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.7));
+}
+
+.star-btn:disabled {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.star-btn.user-rated {
+  filter: drop-shadow(0 0 6px rgba(255, 193, 7, 0.8));
+  animation: pulse-star 0.5s ease-out;
+}
+
+@keyframes pulse-star {
+  0% {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 12px rgba(255, 193, 7, 1));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(255, 193, 7, 0.8));
+  }
+}
+
+.star-rating-info {
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+  min-height: 20px;
+}
+
+.star-rating-value strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.star-rating-muted {
+  color: #999;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .star-rating-info {
+    font-size: 12px;
+  }
+
+  .star-size-small .star-rating-info {
+    font-size: 10px;
+  }
+
+  .star-size-large .star-rating-info {
+    font-size: 14px;
+  }
+}
+
+.star-rating-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #ffc107, #ffed4e);
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(255, 193, 7, 0.4);
+  z-index: 9999;
+  pointer-events: none;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .star-rating-toast {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 16px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+}

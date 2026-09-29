@@ -1,0 +1,1293 @@
+.wpants-page {
+  width: 100%;
+  background: #080808;
+  color: white;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  padding-top: 70px;
+}
+
+.wpants-hero {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.wpants-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1600&auto=format&fit=crop&q=60")
+    center/cover no-repeat;
+  animation: wpantsZoom 24s ease infinite alternate;
+}
+
+@keyframes wpantsZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+.wpants-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 15, 8, 0.85) 50%,
+    rgba(0, 255, 136, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+.wpants-hero-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(transparent, #080808);
+  z-index: 2;
+}
+
+.wpants-glow {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.g1 {
+  top: 5%;
+  right: 8%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 255, 136, 0.1), transparent 70%);
+  animation: wpantsGlow 6s ease infinite alternate;
+}
+
+.g2 {
+  bottom: 10%;
+  left: 5%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.08), transparent 70%);
+  animation: wpantsGlow 8s ease infinite alternate-reverse;
+}
+
+@keyframes wpantsGlow {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.3) translate(20px, -20px); }
+}
+
+.wpants-particle {
+  position: absolute;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ff88;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.wpants-hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 750px;
+  padding: 0 60px;
+}
+
+.wpants-breadcrumb {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 15px;
+}
+
+.wpants-bread-active {
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.wpants-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 20px;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.25);
+  border-radius: 50px;
+  color: #00ff88;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.wpants-tag-dot {
+  width: 6px;
+  height: 6px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ff88;
+}
+
+.wpants-hero-content h1 {
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: white;
+}
+
+.wpants-neon {
+  color: #00ff88;
+  text-shadow: 0 0 25px rgba(0, 255, 136, 0.5),
+               0 0 50px rgba(0, 255, 136, 0.2);
+  animation: wpantsNeon 3s ease infinite alternate;
+}
+
+@keyframes wpantsNeon {
+  from { text-shadow: 0 0 15px rgba(0, 255, 136, 0.4); }
+  to   { text-shadow: 0 0 45px rgba(0, 255, 136, 0.7); }
+}
+
+.wpants-hero-desc {
+  font-size: clamp(13px, 1.6vw, 16px);
+  opacity: 0.65;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.wpants-hero-features {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.wpants-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.wpants-feature svg { color: #00ff88; }
+
+.wpants-search-info-bar {
+  background: linear-gradient(135deg, #ff69b4 0%, #9b59b6 100%);
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 1400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(255, 105, 180, 0.3);
+}
+
+.wpants-search-info-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.wpants-search-info-icon {
+  font-size: 18px;
+  animation: wpants-search-spin 2s linear infinite;
+}
+
+@keyframes wpants-search-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.wpants-search-info-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  backdrop-filter: blur(10px);
+}
+
+.wpants-search-clear-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.wpants-search-clear-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.wpants-fit-bar {
+  padding: 15px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.wpants-fit-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px;
+  background: rgba(0, 255, 136, 0.03);
+  border: 1px solid rgba(0, 255, 136, 0.08);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.wpants-fit-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.wpants-fit-chip .chip-icon {
+  font-size: 14px;
+  color: #00ff88;
+}
+
+.wpants-fit-chip:hover {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+.wpants-fit-chip.active {
+  background: #00ff88;
+  color: #000;
+  border-color: #00ff88;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+}
+
+.wpants-filter-bar {
+  padding: 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.wpants-filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(0, 255, 136, 0.03);
+  border: 1px solid rgba(0, 255, 136, 0.08);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.wpants-filter-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.wpants-filter-icon { color: #00ff88; font-size: 15px; flex-shrink: 0; }
+
+.wpants-filter-search-mode {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #ff69b4 0%, #9b59b6 100%);
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 12px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+  animation: wpants-search-pulse 2s ease-in-out infinite;
+}
+
+@keyframes wpants-search-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+  }
+}
+
+.wpants-chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.wpants-chips::-webkit-scrollbar { height: 2px; }
+.wpants-chips::-webkit-scrollbar-thumb { background: #00ff88; border-radius: 10px; }
+
+.wpants-chip {
+  padding: 6px 16px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.wpants-chip:hover { border-color: #00ff88; color: #00ff88; }
+
+.wpants-chip.active {
+  background: #00ff88;
+  color: #000;
+  border-color: #00ff88;
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+}
+
+.wpants-chip.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+.wpants-filter-right { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+
+.wpants-sort-wrap { position: relative; }
+
+.wpants-sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.wpants-sort-btn:hover { border-color: #00ff88; color: #00ff88; }
+
+.wpants-sort-drop {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #111;
+  border: 1px solid rgba(0, 255, 136, 0.12);
+  border-radius: 12px;
+  padding: 5px;
+  min-width: 190px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.wpants-sort-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wpants-sort-item:hover { background: rgba(0, 255, 136, 0.08); color: #00ff88; }
+.wpants-sort-item.active { color: #00ff88; }
+
+.wpants-count { font-size: 13px; opacity: 0.5; }
+.wpants-count span { color: #00ff88; font-weight: 600; }
+
+.wpants-grid-section {
+  padding: 15px 40px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.wpants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.wpants-card.wpants-highlight {
+  animation: wpants-pulse 2s ease-in-out;
+  outline: 3px solid #ff69b4;
+  outline-offset: 5px;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+}
+
+@keyframes wpants-pulse {
+  0%, 100% {
+    outline-color: #ff69b4;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+  }
+  50% {
+    outline-color: rgba(255, 105, 180, 0.5);
+    box-shadow: 0 0 50px rgba(255, 105, 180, 0.7);
+  }
+}
+
+.wpants-card {
+  background: #111;
+  border: 1px solid rgba(0, 255, 136, 0.05);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.wpants-card:hover {
+  border-color: rgba(0, 255, 136, 0.2);
+  box-shadow: 0 12px 45px rgba(0, 255, 136, 0.08);
+  transform: translateY(-6px);
+}
+
+.wpants-card-img {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.wpants-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s;
+}
+
+.wpants-card:hover .wpants-card-img img { transform: scale(1.08); }
+
+.wpants-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  z-index: 3;
+}
+
+.wpants-discount-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: rgba(255, 50, 50, 0.9);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  z-index: 3;
+}
+
+.wpants-fit-badge {
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  z-index: 3;
+}
+
+.wpants-heart {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  backdrop-filter: blur(4px);
+  transition: 0.3s;
+}
+
+.wpants-heart.liked {
+  background: #ff4444;
+  box-shadow: 0 0 12px rgba(255, 68, 68, 0.5);
+}
+
+.wpants-sold-out {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.wpants-sold-out span {
+  padding: 8px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.wpants-hover-actions {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.wpants-act-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.wpants-act-btn:hover {
+  background: #00ff88;
+  color: #000;
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.wpants-cart-act {
+  width: 48px;
+  height: 48px;
+  background: #00ff88;
+  color: #000;
+  border: none;
+  font-size: 18px;
+}
+
+.wpants-cart-act:hover { box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); }
+
+.wpants-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.wpants-card-author {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #00ff88;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.wpants-brand-dot {
+  width: 6px;
+  height: 6px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ff88;
+}
+
+.wpants-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 2px 0;
+}
+
+.wpants-card-cat {
+  display: inline-block;
+  width: fit-content;
+  padding: 3px 10px;
+  background: rgba(0, 255, 136, 0.08);
+  border-radius: 12px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wpants-card-desc {
+  font-size: 12px;
+  opacity: 0.45;
+  line-height: 1.5;
+  margin: 2px 0;
+}
+
+.wpants-card-rating-wrapper,
+.kc-card-rating-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+
+.wpants-card-rating-wrapper .star-rating-wrapper,
+.kc-card-rating-wrapper .star-rating-wrapper {
+  gap: 3px;
+}
+
+.wpants-card-rating-wrapper .star-btn,
+.kc-card-rating-wrapper .star-btn {
+  font-size: 14px;
+  padding: 2px;
+}
+
+.wpants-rating-reviews,
+.kc-rating-reviews {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.wpants-card-colors {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 3px 0;
+}
+
+.wpants-color-mini {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.wpants-color-mini:hover { transform: scale(1.2); border-color: #00ff88; }
+
+.wpants-color-count {
+  font-size: 10px;
+  opacity: 0.35;
+  margin-left: 4px;
+}
+
+.wpants-features-mini {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 2px 0;
+}
+
+.wpants-feature-tag {
+  padding: 2px 8px;
+  background: rgba(0, 255, 136, 0.08);
+  border-radius: 10px;
+  font-size: 9px;
+  color: rgba(0, 255, 136, 0.7);
+}
+
+.wpants-sold-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  opacity: 0.35;
+}
+
+.wpants-sold-info svg { font-size: 10px; color: #00ff88; }
+
+.wpants-card-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0;
+}
+
+.wpants-price-now { font-size: 20px; font-weight: 800; color: #00ff88; }
+.wpants-price-was { font-size: 13px; text-decoration: line-through; opacity: 0.3; }
+
+.wpants-save-tag {
+  padding: 2px 8px;
+  background: rgba(0, 255, 136, 0.1);
+  border-radius: 10px;
+  font-size: 10px;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.wpants-card-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.wpants-add-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 12px;
+  background: transparent;
+  color: #00ff88;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wpants-add-btn:hover {
+  background: #00ff88;
+  color: #000;
+  box-shadow: 0 0 18px rgba(0, 255, 136, 0.3);
+}
+
+.wpants-add-btn.added {
+  background: #00ff88;
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.wpants-add-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+.wpants-view-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 12px;
+  background: transparent;
+  color: #00ff88;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.wpants-view-btn:hover {
+  background: rgba(0, 255, 136, 0.1);
+  border-color: #00ff88;
+}
+
+.wpants-no-results {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  gap: 20px;
+}
+
+.wpants-no-icon {
+  font-size: 64px;
+  color: rgba(255, 105, 180, 0.3);
+}
+
+.wpants-no-results h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.wpants-no-results p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  max-width: 500px;
+}
+
+.wpants-no-results button {
+  margin-top: 10px;
+  padding: 12px 24px;
+  background: rgba(255, 105, 180, 0.1);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  border-radius: 8px;
+  color: #ff69b4;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.wpants-no-results button:hover {
+  background: #ff69b4;
+  color: #fff;
+  border-color: #ff69b4;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+.wpants-load-more { text-align: center; padding: 40px 0; }
+
+.wpants-load-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 35px;
+  border: 2px solid #00ff88;
+  border-radius: 50px;
+  background: transparent;
+  color: #00ff88;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wpants-load-btn:hover {
+  background: #00ff88;
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+}
+
+.wpants-wishlist-toast {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #ff69b4 0%, #9b59b6 100%);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(255, 105, 180, 0.4);
+  z-index: 10000;
+}
+
+.wpants-toast-heart-added {
+  color: #fff;
+  font-size: 20px;
+  animation: wpants-heart-beat 0.6s ease;
+}
+
+.wpants-toast-heart-removed {
+  color: #fff;
+  font-size: 20px;
+}
+
+@keyframes wpants-heart-beat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.3); }
+  50% { transform: scale(1.1); }
+}
+
+.wpants-modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.wpants-modal {
+  position: relative;
+  background: #111;
+  border: 1px solid rgba(0, 255, 136, 0.12);
+  border-radius: 24px;
+  width: min(100%, 950px);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6),
+              0 0 50px rgba(0, 255, 136, 0.08);
+}
+
+.wpants-modal::-webkit-scrollbar { width: 4px; }
+.wpants-modal::-webkit-scrollbar-thumb { background: #00ff88; border-radius: 10px; }
+
+.wpants-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.wpants-modal-close:hover { background: #00ff88; color: #000; }
+
+.wpants-modal-grid {
+  display: flex;
+  align-items: stretch;
+}
+
+.wpants-modal-img-section {
+  position: relative;
+  width: 45%;
+  min-height: 500px;
+}
+
+.wpants-modal-img-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px 0 0 24px;
+}
+
+.wpants-modal-info {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.wpants-modal-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #00ff88;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.wpants-modal-info h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 5px 0 8px;
+  color: white;
+}
+
+.wpants-modal-rating-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 12px 0;
+}
+
+.wpants-modal-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 12px 0 8px;
+  flex-wrap: wrap;
+}
+
+.wpants-tab {
+  padding: 7px 16px;
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  border-radius: 20px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wpants-tab:hover { color: #00ff88; border-color: rgba(0, 255, 136, 0.3); }
+
+.wpants-tab.active {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border-color: #00ff88;
+  font-weight: 600;
+}
+
+.wpants-modal-tab-content {
+  min-height: 70px;
+  margin: 8px 0;
+}
+
+.wpants-modal-tab-content p {
+  font-size: 13px;
+  opacity: 0.6;
+  line-height: 1.7;
+}
+
+.wpants-modal-tab-content ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wpants-modal-tab-content li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.wpants-modal-tab-content li svg { color: #00ff88; font-size: 14px; }
+
+.wpants-modal-section { margin: 12px 0; }
+
+.wpants-modal-section h4 {
+  font-size: 12px;
+  color: #00ff88;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wpants-modal-colors { display: flex; gap: 8px; }
+
+.wpants-modal-color {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: block;
+}
+
+.wpants-modal-color:hover { transform: scale(1.15); }
+
+.wpants-modal-color.selected {
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.wpants-modal-sizes { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.wpants-modal-size {
+  padding: 6px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wpants-modal-size:hover { border-color: #00ff88; color: #00ff88; }
+
+.wpants-modal-size.selected {
+  background: #00ff88;
+  color: #000;
+  border-color: #00ff88;
+  font-weight: 700;
+}
+
+.wpants-qty {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  border-radius: 12px;
+  padding: 5px 15px;
+  width: fit-content;
+}
+
+.wpants-qty button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.wpants-qty button:hover { background: #00ff88; color: #000; }
+.wpants-qty span { font-size: 16px; font-weight: 700; min-width: 25px; text-align: center; }
+
+.wpants-modal-total { font-size: 14px; opacity: 0.6; margin: 12px 0; }
+.wpants-modal-total span { font-size: 22px; font-weight: 800; color: #00ff88; margin-left: 8px; }
+
+.wpants-modal-actions { display: flex; gap: 10px; margin-top: 15px; }
+
+.wpants-modal-cart-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: #00ff88;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  transition: 0.3s;
+}
+
+.wpants-modal-cart-btn:hover { box-shadow: 0 0 40px rgba(0, 255, 136, 0.5); }
+
+.wpants-modal-wish-btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 14px;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.wpants-modal-wish-btn:hover { border-color: #ff4444; color: #ff4444; }
+.liked-icon { color: #ff4444; }
+
+@media (max-width: 900px) {
+  .wpants-modal-grid { flex-direction: column; }
+  .wpants-modal-img-section { width: 100%; min-height: 280px; }
+  .wpants-modal-img-section img { border-radius: 24px 24px 0 0; }
+}
+
+@media (max-width: 768px) {
+  .wpants-search-info-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wpants-search-info-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wpants-search-info-count {
+    margin-left: 0;
+  }
+
+  .wpants-search-clear-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wpants-filter-search-mode {
+    margin-bottom: 10px;
+  }
+
+  .wpants-card-rating-wrapper,
+  .kc-card-rating-wrapper {
+    gap: 4px;
+    margin: 6px 0;
+  }
+
+  .wpants-card-rating-wrapper .star-btn,
+  .kc-card-rating-wrapper .star-btn {
+    font-size: 12px;
+    padding: 1px;
+  }
+
+  .wpants-rating-reviews,
+  .kc-rating-reviews {
+    font-size: 10px;
+  }
+
+  .wpants-modal-rating-wrapper {
+    padding: 10px 0;
+  }
+
+  .wpants-hero { height: 55vh; }
+  .wpants-hero-content { padding: 0 20px; }
+  .wpants-hero-content h1 { font-size: 28px; }
+  .wpants-hero-features { flex-direction: column; gap: 10px; }
+
+  .wpants-filter-bar,
+  .wpants-grid-section { padding-left: 15px; padding-right: 15px; }
+
+  .wpants-filter-row { flex-direction: column; align-items: flex-start; }
+
+  .wpants-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .wpants-card-img { height: 220px; }
+  .wpants-card-body { padding: 12px; }
+  .wpants-card-title { font-size: 13px; }
+  .wpants-card-desc { display: none; }
+  .wpants-price-now { font-size: 16px; }
+  .wpants-sold-info { display: none; }
+  .wpants-card-colors { display: none; }
+
+  .g1 { width: 200px; height: 200px; }
+  .g2 { display: none; }
+}
+
+@media (max-width: 480px) {
+  .wpants-grid { grid-template-columns: 1fr; }
+  .wpants-hero { height: 50vh; }
+}

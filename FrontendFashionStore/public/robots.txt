@@ -1,0 +1,14 @@
+# robots.txt — FashionStore
+User-agent: *
+Allow: /
+
+# Pages privees ou sans valeur pour l'index
+Disallow: /checkout
+Disallow: /cart
+Disallow: /orders
+Disallow: /login
+Disallow: /register
+Disallow: /verify-email
+Disallow: /api
+
+Sitemap: http://localhost:4173/sitemap.xml
