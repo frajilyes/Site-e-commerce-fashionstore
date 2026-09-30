@@ -60,11 +60,6 @@ export const ENDPOINTS = {
     root: "/webhook",
     byId: (id) => `/webhook/${id}`,
   },
-
-  upload: {
-    single: "/upload",
-    multiple: "/upload/multiple",
-  },
 };
 
 export default ENDPOINTS;

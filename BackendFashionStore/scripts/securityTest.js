@@ -1,5 +1,4 @@
 
-const fs = require("fs");
 const bcrypt = require("bcrypt");
 
 const env = require("../config/env");
@@ -88,7 +87,6 @@ const run = async () => {
 
   try {
     let tokenA = await login(userA.email);
-    const tokenB = await login(userB.email);
 
     const products = await Clothes.find({ inStock: { $ne: false } }, { price: 1 })
       .limit(2)
@@ -336,33 +334,6 @@ const run = async () => {
       expect(r.headers.get("content-encoding") === "gzip", `encodage ${r.headers.get("content-encoding")}`);
       const me = await api("GET", "/api/auth/me", { token: tokenA });
       expect(me.headers.get("cache-control") === "no-store", "donnees privees cachables");
-    });
-
-    await check("un HTML deguise en PNG est refuse et supprime", async () => {
-      const before = fs.existsSync(env.upload.dir) ? fs.readdirSync(env.upload.dir).length : 0;
-      const form = new FormData();
-      form.append(
-        "image",
-        new Blob(["<html><script>alert(document.cookie)</script></html>"], { type: "image/png" }),
-        "evil.html",
-      );
-      const { status } = await api("POST", "/api/upload", { token: tokenB, body: form });
-      const after = fs.existsSync(env.upload.dir) ? fs.readdirSync(env.upload.dir).length : 0;
-      expect(status === 400, `statut ${status}`);
-      expect(after === before, "le fichier piege est reste sur le disque");
-    });
-
-    await check("une vraie image PNG passe, avec un nom et une extension surs", async () => {
-      const png = Buffer.from(
-        "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
-        "base64",
-      );
-      const form = new FormData();
-      form.append("image", new Blob([png], { type: "image/png" }), "../../evil.html");
-      const { status, data } = await api("POST", "/api/upload", { token: tokenB, body: form });
-      expect(status === 201, `statut ${status} ${JSON.stringify(data)}`);
-      expect(/^[\w-]+\.png$/.test(data.filename), `nom ${data.filename}`);
-      await api("DELETE", `/api/upload/${data.filename}`, { token: tokenB });
     });
   } finally {
     const ids = [userA._id, userB._id];

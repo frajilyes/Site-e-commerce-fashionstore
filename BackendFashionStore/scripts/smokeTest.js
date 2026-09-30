@@ -137,11 +137,6 @@ const run = async () => {
     expect(status === 401, `statut ${status}`);
   });
 
-  await check("upload sans jeton renvoie 401", async () => {
-    const { status } = await request("/api/upload", { method: "POST" });
-    expect(status === 401, `statut ${status}`);
-  });
-
   await check("origine non autorisee refusee par CORS", async () => {
     const { status } = await request("/api/clothes", {
       headers: { Origin: "http://attaquant.example" },

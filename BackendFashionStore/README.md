@@ -34,15 +34,14 @@ app.js          application Express (middlewares + routes), sans écoute
 index.js        démarrage : validation .env, connexion Mongo, écoute, arrêt propre
 config/         env (source unique des variables), connexion Mongo, client Stripe
 Models/         schémas Mongoose
-Controllers/    logique HTTP (dont uploadController)
+Controllers/    logique HTTP
 Routers/        définition des routes
-Middlewares/    auth, admin, upload, rateLimiter, sanitize, gestion d'erreurs
+Middlewares/    auth, admin, rateLimiter, sanitize, gestion d'erreurs
 services/       règles métier réutilisables (catalogue, Stripe)
 validators/     validation des corps de requête (index.js)
 Utils/          ApiError, asyncHandler, jwt, apiFeatures, response, mailer
 seed/           catalogue de démonstration + script d'insertion
 scripts/        migrate, syncIndexes, smokeTest, testMail
-uploads/        images envoyées (non versionné)
 ```
 
 Les anciens chemins restent valides : `Middlewares/validate.js`,
@@ -221,16 +220,6 @@ de `CartNumber`/`CVV` est rejeté en 400. Avec
 
 Une commande exige un `orderNumber` unique : il est généré côté serveur s'il
 n'est pas fourni.
-
-### Upload — `/api/upload`
-| Méthode | Route | Champ | Accès |
-|---|---|---|---|
-| POST | `/` | `image` | 👑 |
-| POST | `/multiple` | `images` (max 8) | 👑 |
-| DELETE | `/:filename` | — | 👑 |
-
-`multipart/form-data`, JPEG/PNG/WEBP/AVIF, 5 Mo max. Renvoie l'URL publique,
-servie ensuite sur `/uploads/<fichier>`.
 
 ## Format des erreurs
 

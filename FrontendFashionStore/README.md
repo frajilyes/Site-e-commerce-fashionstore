@@ -45,7 +45,7 @@ préfixées `VITE_` sont exposées au navigateur.
 | `VITE_TOKEN_KEY`              | `fashionstore_token`        | Clé localStorage du jeton JWT                    |
 
 Le backend autorise `CLIENT_URL` (par défaut `http://localhost:5173`) en CORS.
-`vite.config.js` proxifie en plus `/api` et `/uploads`, donc mettre
+`vite.config.js` proxifie en plus `/api`, donc mettre
 `VITE_API_URL=/api` supprime toute question de CORS en développement.
 
 ---
@@ -68,7 +68,6 @@ src/
 │  ├─ paymentsApi.js        # /api/payments
 │  ├─ cartsApi.js           # /api/carts     (moyen de paiement Stripe)
 │  ├─ wishlistApi.js        # /api/wishlists
-│  ├─ uploadApi.js          # /api/upload    (admin)
 │  ├─ healthApi.js          # /api/health
 │  ├─ index.js              # barrel : import { clothesApi } from "../Api"
 │  └─ Api.jsx               # page /api de diagnostic

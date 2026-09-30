@@ -103,12 +103,6 @@ const accountLoginLimiter = rateLimiter({
     "Too many failed attempts on this account. Please wait before trying again.",
 });
 
-const uploadLimiter = rateLimiter({
-  scope: "upload",
-  max: env.rateLimit.uploadMax,
-  message: "Too many uploads, please try again later",
-});
-
 const resetRateLimits = () => buckets.clear();
 
 module.exports = {
@@ -116,6 +110,5 @@ module.exports = {
   apiLimiter,
   authLimiter,
   accountLoginLimiter,
-  uploadLimiter,
   resetRateLimits,
 };

@@ -50,7 +50,6 @@ export const VALIDATION = {
   commentMaxLength: 1000,
   ratingMin: 1,
   ratingMax: 5,
-  maxUploadImages: 8,
 };
 
 export default {

@@ -12,5 +12,4 @@ export { default as orderReviewsApi } from "./orderReviewsApi";
 export { default as paymentsApi } from "./paymentsApi";
 export { default as cartsApi } from "./cartsApi";
 export { default as wishlistApi } from "./wishlistApi";
-export { default as uploadApi } from "./uploadApi";
 export { default as healthApi } from "./healthApi";

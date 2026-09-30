@@ -1,5 +1,4 @@
 
-const path = require("path");
 const compression = require("compression");
 const cors = require("cors");
 const express = require("express");
@@ -22,7 +21,6 @@ const wishListRouter = require("./Routers/wishListRouter");
 const payementRouter = require("./Routers/payementRouter");
 const webHookRouter = require("./Routers/webHookRouter");
 const stripeWebhookRouter = require("./Routers/stripeWebhookRouter");
-const uploadRouter = require("./Routers/uploadRouter");
 
 const app = express();
 
@@ -94,26 +92,6 @@ app.use(
 
 app.use(sanitizeRequest);
 
-app.use(
-  env.upload.publicPath,
-  express.static(env.upload.dir, {
-    maxAge: env.isProduction ? "30d" : 0,
-    immutable: env.isProduction,
-    index: false,
-    dotfiles: "deny",
-    setHeaders: (res) => {
-      res.setHeader(
-        "Cache-Control",
-        env.isProduction ? "public, max-age=2592000, immutable" : "no-cache",
-      );
-      res.setHeader(
-        "Content-Security-Policy",
-        "default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; sandbox",
-      );
-    },
-  }),
-);
-
 app.get("/api/health", (req, res) => {
   const dbReady = mongoose.connection.readyState === 1;
 
@@ -149,7 +127,6 @@ app.use("/api/carts", cartRouter);
 app.use("/api/payments", payementRouter);
 app.use("/api/wishlists", wishListRouter);
 app.use("/api/webhook", webHookRouter);
-app.use("/api/upload", uploadRouter);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -1,6 +1,4 @@
 
-const path = require("path");
-
 require("dotenv").config({ quiet: true });
 
 const raw = process.env;
@@ -90,19 +88,7 @@ const env = {
     max: int(raw.RATE_LIMIT_MAX, 600),
     authMax: int(raw.RATE_LIMIT_AUTH_MAX, 20),
     accountMax: int(raw.RATE_LIMIT_ACCOUNT_MAX, 10),
-    uploadMax: int(raw.RATE_LIMIT_UPLOAD_MAX, 60),
     enabled: bool(raw.RATE_LIMIT_ENABLED, true),
-  },
-
-  upload: {
-    dir: path.resolve(__dirname, "..", str(raw.UPLOAD_DIR, "uploads")),
-    publicPath: "/uploads",
-    maxFileSize: int(raw.UPLOAD_MAX_FILE_SIZE, 5 * 1024 * 1024),
-    maxFiles: int(raw.UPLOAD_MAX_FILES, 8),
-    allowedMimeTypes: list(
-      raw.UPLOAD_ALLOWED_TYPES ||
-        "image/jpeg,image/png,image/webp,image/avif",
-    ),
   },
 
   pagination: {
